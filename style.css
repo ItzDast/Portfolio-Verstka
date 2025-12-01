@@ -217,7 +217,7 @@ input[type='file'] {
 
   .burger.active span {
     opacity: 0;
-	transform: translate(1000px,-2px);
+	transform: translate(-1000px,-2px);
     background-color: #828282;
   }
 }
@@ -299,3 +299,4 @@ input[type='file'] {
 	width: 370px;
 	height: 228px;
 }
+
