@@ -189,25 +189,22 @@ input[type='file'] {
     height: 3px;
     transition: .3s;
 	height: 4px;
+	background-color: #000000;
   }
 
   .burger span {
     top: 50%;
     transform: translateY(-50%);
-	background-color: #000000;
   }
 
   .burger::before {
     top: 0;
-	background-color: #000000;
   }
 
   .burger::after {
     bottom: 0;
-	background-color: #000000;
   }
 
-  /* Анимация крестика */
   .burger.active::before {
     transform: rotate(45deg) translateY(12px);
 	background-color: #828282;
@@ -220,6 +217,8 @@ input[type='file'] {
 
   .burger.active span {
     opacity: 0;
+	transform: translate(1000px,-2px);
+    background-color: #828282;
   }
 }
 .content{
