@@ -89,7 +89,7 @@ input[type='file'] {
 .container{
 	margin: 0 13%;
 }
-@media (min-width: 1200x){
+@media (min-width: 1200px){
 	.container{
 		width: 1200px;
 		margin: 0 auto;
@@ -228,7 +228,12 @@ input[type='file'] {
 }
 .content__inner{
 	max-width: 482px;
-	margin-bottom: 30px;
+	margin: auto 0 calc((613px + 126px - 208.6px)/2);
+}
+@media (max-width: 1200px){
+	.content__inner {
+	  margin: auto 0 calc((613px + 126px - 364px)/2);
+    }
 }
 .content__title{
 	font-weight: 600;
@@ -243,6 +248,55 @@ input[type='file'] {
 .content__image{
 	width: 494px;
     height: 613px;
+}
+ @keyframes typing {
+	5%{content:"D|";}
+	10%{content:"De|";}
+	15%{content:"Des|";}
+	20%{content:"Desi|";}
+	25%{content:"Desig|";}
+	30%{content:"Design|";}
+	35%{content:"Designe|";}
+	40%{content:"Designer|";}
+	45%{content:"Designer |";}
+	50%{content:"Designer &|";}
+	55%{content:"Designer & |";}
+	60%{content:"Designer & D|";}
+	65%{content:"Designer & De|";}
+	70%{content:"Designer & Dev|";}
+	75%{content:"Designer & Deve|";}
+	80%{content:"Designer & Devel|";}
+	85%{content:"Designer & Develo|";}
+	90%{content:"Designer & Develop|";}
+	95%{content:"Designer & Develope|";}
+	100%{content:"Designer & Developer";}
+}
+@keyframes blink {
+  50% {content:"ㅤ"}
+  100% {content:"|";}
+}
+.content__title_span{
+	position: relative;
+	display: inline-block;
+}
+.content__title_span::before{
+	content: "ㅤ";
+	animation: blink 0.6s 3,typing 1.6s 1 forwards;
+	animation-delay: 0s, 1.8s;
+}
+.content__title_span:after{
+	content: "ㅤ";
+	position: absolute;
+    top: 0;        
+    right: -15px;     
+	animation: blink 0.8s infinite;
+	animation-delay: 3.2s;
+}
+@media (max-width: 1200px) and (min-width: 901px){
+	.content__title_span:after{
+    	top: 65px;
+        right: 25px;
+	}
 }
 @media (max-width: 900px){
 	.content{
@@ -264,6 +318,9 @@ input[type='file'] {
 	}
 	.content__inner{
 		margin-bottom: 20px;
+	}
+	.content__title_span:after{
+    	right: -10px;
 	}
 }
 @media (max-width: 600px){
@@ -299,4 +356,3 @@ input[type='file'] {
 	width: 370px;
 	height: 228px;
 }
-
